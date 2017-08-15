@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-102688374-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!--  jquery  -->
+    <script src="{{ url_for('static', filename='jquery-3.2.1.min.js') }}"></script>
+
+    <!--  Highcharts  -->
+    <script src="{{ url_for('static', filename='highcharts.js') }}"></script>
+
+    <!-- Bootstrap -->
+    <link href="{{ url_for('static', filename='bootstrap.min.css') }}" rel="stylesheet" />
+    <script src="{{ url_for('static', filename='bootstrap.min.js')}}"></script>
+    
+    <!--  PapaParse  -->
+    <script src="{{ url_for('static', filename='papaparse.min.js') }}"></script>
+
+    <!--  Sample race data  -->
+    <script src="{{ url_for('static', filename='race_data.csv') }}"></script>
+
+    <!-- style.css  -->
+    <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet" /> {{ JSGlue.include() }}
+
+    <!-- app's own JavaScript -->
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+
+    <title>{% block title %}{% endblock %}</title>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="themeHeader">
+            <table>
+                <table cellpadding="0" cellspacing="0" class="themeHeader">
+                    <tbody>
+                        <tr>
+                            <td class="title">
+                                <h1><a class="undeca" href="{{ url_for('index') }}">Typeracer Charts</a></h1>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </table>
+        </div>
+        <!-- <div class="expand"></div>  -->
+        <div class="content">
+            {% block main %}{% endblock %}
+        </div>
+
+        <footer>
+        </footer>
+    </div>
+</body>
+
+</html>
