@@ -56,6 +56,10 @@ a {
     padding : 15px;
 }
 
+.instructions {
+    font-size: 16px;
+}
+
 #submit {
     background : #f2b632;
     color : rgb(51, 51, 51);
