@@ -93,6 +93,9 @@ function toChart(json, file) {
             type: 'scatter',
             zoomType: 'x'
         },
+        boost: {
+            useGPUTranslations: true
+        },    
         title: {
             text: 'TypeRacer WPM'
         },
@@ -121,7 +124,7 @@ function toChart(json, file) {
         },
         series: [{
             name: 'WPM',
-            color: 'rgba(37, 40, 57, .22)',
+            color: 'rgba(37, 40, 57, .1)',
             data: wpm,
             marker: {
                 radius: 6
@@ -143,6 +146,9 @@ function toChart(json, file) {
             backgroundColor: null,
             type: 'scatter'
         },
+        boost: {
+            useGPUTranslations: true
+        },    
         title: {
             text: 'TypeRacer WPM'
         },
@@ -176,7 +182,7 @@ function toChart(json, file) {
         },
         series: [{
             name: 'WPM',
-            color: 'rgba(37, 40, 57, .22)',
+            color: 'rgba(37, 40, 57, .1)',
             data: acc,
             marker: {
                 radius: 6
