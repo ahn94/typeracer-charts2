@@ -86,8 +86,8 @@ function toChart(json, file) {
     }
 
 
-    $('#container').removeClass('gone');
-    chartWPM = Highcharts.chart('container', {
+    $('#chart-wpm').removeClass('gone');
+    chartWPM = Highcharts.chart('chart-wpm', {
         chart: {
             backgroundColor: null,
             type: 'scatter',
@@ -97,7 +97,10 @@ function toChart(json, file) {
             useGPUTranslations: true
         },    
         title: {
-            text: 'TypeRacer WPM'
+            text: 'WPM',
+            style: {
+                'font-size': '25px'
+            }
         },
         yAxis: {
             title: {
@@ -140,17 +143,20 @@ function toChart(json, file) {
         }]
     });
 
-    $('#container2').removeClass('gone');
-    chartWPM = Highcharts.chart('container2', {
+    $('#chart-acc').removeClass('gone');
+    chartWPM = Highcharts.chart('chart-acc', {
         chart: {
             backgroundColor: null,
             type: 'scatter'
         },
+        title: {
+            text: 'Accuracy',
+            style: {
+                'font-size': '25px'
+            }
+        },
         boost: {
             useGPUTranslations: true
-        },    
-        title: {
-            text: 'TypeRacer WPM'
         },
         yAxis: {
             title: {
@@ -164,7 +170,7 @@ function toChart(json, file) {
                 }
             },
             title: {
-                text: 'Accuracy Percentage'
+                text: 'Accuracy'
             },
             minTickInterval: .005
         },
